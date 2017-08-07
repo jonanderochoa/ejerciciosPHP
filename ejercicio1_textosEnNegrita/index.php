@@ -2,10 +2,8 @@
 	//Creamos una variable que insertaremos en el body
 	$variable1 = "Eru";
 	$numero = 20;
-	$euros = $_POST['euros'];
-	$pesetas = $euros * 166;
 	#Muestra todas las variables definidas con sus respectivos valores
-	print_r(get_defined_vars()); 
+	#print_r(get_defined_vars()); 
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -51,14 +49,13 @@
 	</table>
 	<br>
 
-	<form action="index.php" method="post">
+	<form action="destino.php" method="post">
 		<h2>Conversion de euros a pesetas</h2>
 		<br>
 		<input type="number" name="euros" placeholder="introduce los euros">
 		<br>
 		<input type="submit" name="Submit">
 	</form>
-	<br>
-		<input type="number" name="pesetas" value = "<?php $pesetas; ?>">
+		
  </body>
 </html>
