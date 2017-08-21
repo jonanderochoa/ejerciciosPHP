@@ -11,11 +11,11 @@
 </head>
 <body>
 	<?php 
-		//Recoge los valores introducidos por el formulario si existen
-		if(isset($_POST['a']) && isset($_POST['b'])){
-			$y = $_POST['a'];
-			$z = $_POST['b'];
-		}
+		//Recoge los valores introducidos por el formulario si existen sino devuelve nulo
+		////Con esta funcion evitamos el error que muestra undefined index
+		$y = isset($_POST['a']) ? $_POST['a'] : null;
+		$z = isset($_POST['b']) ? $_POST['b'] : null;
+		
 		//Si se pulsa el boton btsuma...
 		if(isset($_POST['btsuma'])){
 			$c = $y + $z;
@@ -34,6 +34,7 @@
 				$c = $y / $z;
 				echo "La división de ".$y." / ".$z." = ".$c;	
 			}else{
+				$c = 0;
 				echo "Cualquier número entre 0 es infinito";
 			}
 		}
